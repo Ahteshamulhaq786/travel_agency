@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('content') 
     <div class="pagetitle">
       <h1>Blank Page</h1>
