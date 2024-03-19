@@ -21,6 +21,10 @@ use Illuminate\Support\Facades\Mail;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/',function(){
+    echo "Home Page"; die;
+});
+
 Route::get('/register', [HomeController::class, 'registerPage'])->name('register');
 // Route::get('/login', [HomeController::class, 'loginPage'])->name('login');
 // Route::get('/logout', [HomeController::class, 'logout'])->name('signout');
@@ -30,9 +34,6 @@ Route::get('/register', [HomeController::class, 'registerPage'])->name('register
 // Route::middleware(['auth'])->group(function () {
 //     Route::get('/blank', [HomeController::class, 'blank_page'])->name('blank_page');
 // });
-Route::get('/',function(){
-    echo "Home Page"; die;
-});
 Route::group(['prefix'=>'admin'],function(){
 
     Route::group(['middleware'=>'admin.auth'],function(){
@@ -49,9 +50,9 @@ Route::group(['prefix'=>'admin'],function(){
 });
 
 
-Route::get('/test_login_mail',function(){
+// Route::get('/test_login_mail',function(){
     // $data['user']=Auth::guard('admin')->user();
     // return (new LoginMail($data))->render();
     // return new App\Mail\LoginMail($data);
     // Mail::to('ahteshamulhaqdev@gmail.com')->send(new LoginMail($data));
-});
+// });
